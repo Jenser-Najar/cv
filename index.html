@@ -14,25 +14,62 @@
     <section class="h-screen flex items-center justify-center text-center px-4">
         <div>
             <h1 class="text-4xl sm:text-6xl font-bold mb-4">Hi, I'm Jenser Najar 👋</h1>
-            <p class="text-xl sm:text-2xl">Python Developer | Django Backend Engineer | Problem Solver</p>
-            <p class="mt-4 text-gray-400 max-w-xl mx-auto">I'm a self-taught developer focused on backend web
-                development using Django and MySQL. I build practical tools and solutions for real-world problems.</p>
-            <a href="#projects"
-                class="mt-8 inline-block bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-6 rounded-lg shadow-md transition">View
-                My Projects</a>
+            <p class="text-xl sm:text-2xl">Full Stack Developer | Django Engineer | JavaScript | Problem Solver</p>
+            <p class="mt-4 text-gray-400 max-w-xl mx-auto">I'm a self-taught full stack developer building modern web
+                applications with Django, Python, JavaScript, MySQL, and more. I create practical tools and solutions
+                for real-world problems, from backend APIs to beautiful, responsive frontends.</p>
+            <div class="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="#about"
+                    class="inline-block bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-6 rounded-lg shadow-md transition">About
+                    Me</a>
+                <a href="#projects"
+                    class="inline-block bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-6 rounded-lg shadow-md transition">View
+                    My Projects</a>
+            </div>
         </div>
     </section>
 
     <!-- About Section -->
-    <section class="px-6 py-20 bg-gray-800">
+    <section id="about" class="px-6 py-20 bg-gray-800">
         <div class="max-w-4xl mx-auto">
             <h2 class="text-3xl font-bold mb-6">About Me</h2>
             <p class="text-lg leading-relaxed text-gray-300">
-                I'm a Python developer specializing in backend development with Django and MySQL. I come from Nicaragua
-                and currently work with the Baptist Medical & Dental Mission International as a translator. My goal is
-                to transition fully into software engineering. I have experience in agriculture, MMA, and endurance
-                sports — which teach me discipline, strategy, and execution. Let's build amazing things together.
+                I'm a Python developer from Nicaragua, specializing in backend and full stack web development with
+                Django, MySQL, and modern JavaScript. I build production-ready apps with beautiful, responsive frontends
+                and robust, scalable backends. I thrive on solving real-world problems, learning new technologies fast,
+                and delivering business value.
             </p>
+            <p class="text-base text-gray-400 mt-2">I am committed to reliability, teamwork, and continuous improvement.
+                I focus on clean code, security, performance, and collaborating with cross-functional teams to deliver
+                results that matter.</p>
+            <div class="mt-6">
+                <h3 class="text-xl font-semibold mb-2">Skills & Technologies</h3>
+                <ul class="grid grid-cols-2 sm:grid-cols-3 gap-2 text-gray-200 text-base">
+                    <li>Python</li>
+                    <li>Django</li>
+                    <li>JavaScript (ES6+)</li>
+                    <li>TypeScript</li>
+                    <li>React</li>
+                    <li>HTML5 & CSS3</li>
+                    <li>SASS</li>
+                    <li>Tailwind CSS</li>
+                    <li>MySQL</li>
+                    <li>PostgreSQL</li>
+                    <li>Linux</li>
+                    <li>REST APIs</li>
+                    <li>API Design</li>
+                    <li>Docker</li>
+                    <li>Git & GitHub</li>
+                    <li>Unit Testing</li>
+                    <li>Continuous Integration</li>
+                    <li>Cloud Deployment (Render, Heroku)</li>
+                    <li>Performance Optimization</li>
+                    <li>Figma</li>
+                    <li>Agile & Remote Collaboration</li>
+                </ul>
+                <p class="mt-4 text-gray-400 text-sm">I learn new technologies in days and apply them in real projects.
+                    My focus: clean code, reliability, security, and delivering measurable value across the stack.</p>
+            </div>
         </div>
     </section>
 
@@ -40,32 +77,33 @@
     <section id="projects" class="px-6 py-20">
         <div class="max-w-6xl mx-auto">
             <h2 class="text-3xl font-bold mb-6 text-center">Projects</h2>
-            <div class="grid gap-8 md:grid-cols-3">
+            <div class="grid gap-8 md:grid-cols-2">
                 <!-- Project Card 1 -->
                 <div class="bg-gray-800 rounded-xl p-6 shadow-lg">
-                    <h3 class="text-xl font-semibold mb-2">Maíz Yield Calculator</h3>
-                    <p class="text-gray-400 mb-4">CLI & Django tool to calculate the profitability of corn production
-                        using real farm data.</p>
-                    <a href="https://github.com/Jenyehu/Advanced_calculator" class="text-blue-400 hover:underline">View
-                        on GitHub</a>
+                    <h3 class="text-xl font-semibold mb-2">Task Manager</h3>
+                    <p class="text-gray-400 mb-4">A modern, full stack Django web app for managing tasks with AJAX, dark
+                        mode, responsive design, and robust backend. Features: add, complete, and delete tasks
+                        instantly. Built with Django, JavaScript, HTML5, CSS3, and deployed on Render.</p>
+                    <div class="flex flex-col gap-2">
+                        <a href="https://github.com/Jenser-Najar/Task_Manager"
+                            class="text-blue-400 hover:underline">View on GitHub</a>
+                        <a href="https://task-manager-eyjb.onrender.com/" class="text-green-400 hover:underline">Live
+                            Demo</a>
+                    </div>
                 </div>
 
                 <!-- Project Card 2 -->
                 <div class="bg-gray-800 rounded-xl p-6 shadow-lg">
-                    <h3 class="text-xl font-semibold mb-2">Fight Tracker API</h3>
-                    <p class="text-gray-400 mb-4">RESTful API built with Django Rest Framework to track and manage MMA
-                        training and fight logs.</p>
-                    <a href="https://github.com/nexglyphos/fight-tracker-api" class="text-blue-400 hover:underline">View
-                        on GitHub</a>
-                </div>
-
-                <!-- Project Card 3 -->
-                <div class="bg-gray-800 rounded-xl p-6 shadow-lg">
-                    <h3 class="text-xl font-semibold mb-2">Bible Verse Scraper</h3>
-                    <p class="text-gray-400 mb-4">Python script that scrapes daily Bible verses and stores them in MySQL
-                        for daily reflection.</p>
-                    <a href="https://github.com/nexglyphos/bible-scraper" class="text-blue-400 hover:underline">View on
-                        GitHub</a>
+                    <h3 class="text-xl font-semibold mb-2">Maíz Yield Calculator</h3>
+                    <p class="text-gray-400 mb-4">A full stack CLI and Django web tool to calculate corn production
+                        profitability using real farm data. Includes user authentication, data visualization, and export
+                        features. Built with Django, Python, MySQL, JavaScript, and deployed on Render.</p>
+                    <div class="flex flex-col gap-2">
+                        <a href="https://github.com/Jenser-Najar/Maiz_Yield_Calculator"
+                            class="text-blue-400 hover:underline">View on GitHub</a>
+                        <a href="https://maiz-yield-calculator.onrender.com/"
+                            class="text-green-400 hover:underline">Live Demo</a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -76,10 +114,14 @@
         <div class="max-w-4xl mx-auto text-center">
             <h2 class="text-3xl font-bold mb-6">Contact Me</h2>
             <p class="text-gray-300 mb-4">Ready to build something meaningful? I'm open to freelance, collaboration, or
-                full-time roles.</p>
-            <p class="text-blue-400">Email: nexglyphos@gmail.com</p>
-            <p class="text-blue-400">GitHub: <a href="https://github.com/nexglyphos"
-                    class="hover:underline">nexglyphos</a></p>
+                full-time roles. Let's connect and build great products together.</p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center mb-4">
+                <a href="mailto:jensernajar228@gmail.com" class="text-blue-400 hover:underline">Email:
+                    jensernajar228@gmail.com</a>
+                <a href="https://github.com/Jenser-Najar" class="text-blue-400 hover:underline">GitHub: Jenser-Najar</a>
+                <a href="https://www.linkedin.com/in/jenser-najar/" class="text-blue-400 hover:underline">LinkedIn</a>
+                <a href="/Jenser_Najar_CV.pdf" class="text-blue-400 hover:underline" download>Download CV</a>
+            </div>
         </div>
     </section>
 
