@@ -1,368 +1,369 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Portfolio – NexGlyphos</title>
-  <style>
-    :root {
-      --bg: #0b0f14;
-      /* fondo principal */
-      --panel: rgba(255, 255, 255, .06);
-      /* vidrio/plasma */
-      --panel-spot: rgba(255, 255, 255, .08);
-      --text: #e8edf3;
-      /* texto base */
-      --muted: #a8b0bb;
-      /* texto tenue */
-      --accent: #ffffff;
-      /* resaltado suave */
-      --radius: 28px;
-      /* curva general */
-      --shadow: 0 10px 30px rgba(0, 0, 0, .35);
-      --speed: .35s;
-      --maxw: 1200px;
-    }
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Portfolio – Jenser Najar</title>
+    <style>
+        :root {
+            --bg: #0b0f14;
+            /* main background */
+            --panel: rgba(255, 255, 255, .06);
+            /* glass/plasma */
+            --panel-spot: rgba(255, 255, 255, .08);
+            --text: #e8edf3;
+            /* base text */
+            --muted: #a8b0bb;
+            /* muted text */
+            --accent: #ffffff;
+            /* soft highlight */
+            --radius: 28px;
+            /* general curve */
+            --shadow: 0 10px 30px rgba(0, 0, 0, .35);
+            --speed: .35s;
+            --maxw: 1200px;
+        }
 
-    /* Reset mínimo */
-    * {
-      box-sizing: border-box
-    }
+        /* Minimal reset */
+        * {
+            box-sizing: border-box
+        }
 
-    html,
-    body {
-      height: 100%
-    }
+        html,
+        body {
+            height: 100%
+        }
 
-    body {
-      margin: 0;
-      color: var(--text);
-      background: var(--bg);
-      font: 16px/1.6 system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
-      overflow-x: hidden;
-    }
+        body {
+            margin: 0;
+            color: var(--text);
+            background: var(--bg);
+            font: 16px/1.6 system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+            overflow-x: hidden;
+        }
 
-    /* Capa de estrellas (no dependencias) */
-    .stars,
-    .stars:before,
-    .stars:after {
-      position: fixed;
-      inset: 0;
-      content: "";
-      display: block;
-      pointer-events: none;
-    }
+        /* Star layer (no dependencies) */
+        .stars,
+        .stars:before,
+        .stars:after {
+            position: fixed;
+            inset: 0;
+            content: "";
+            display: block;
+            pointer-events: none;
+        }
 
-    .stars {
-      background: radial-gradient(1200px 600px at 20% 10%, rgba(255, 255, 255, .045), transparent 60%),
-        radial-gradient(900px 500px at 80% 20%, rgba(255, 255, 255, .03), transparent 60%),
-        radial-gradient(1200px 800px at 50% 120%, rgba(255, 255, 255, .035), transparent 60%);
-    }
+        .stars {
+            background: radial-gradient(1200px 600px at 20% 10%, rgba(255, 255, 255, .045), transparent 60%),
+                radial-gradient(900px 500px at 80% 20%, rgba(255, 255, 255, .03), transparent 60%),
+                radial-gradient(1200px 800px at 50% 120%, rgba(255, 255, 255, .035), transparent 60%);
+        }
 
-    /* nubes de estrellas con box-shadow múltiple */
-    .stars:before {
-      background: transparent;
-      box-shadow:
-        20vw 10vh 1px 1px rgba(255, 255, 255, .8),
-        40vw 30vh 1px 0 rgba(255, 255, 255, .5),
-        60vw 70vh 2px 0 rgba(255, 255, 255, .6),
-        80vw 20vh 1px 0 rgba(255, 255, 255, .7),
-        10vw 60vh 2px 0 rgba(255, 255, 255, .45),
-        30vw 80vh 1px 0 rgba(255, 255, 255, .55),
-        70vw 50vh 2px 0 rgba(255, 255, 255, .6),
-        90vw 40vh 1px 0 rgba(255, 255, 255, .55),
-        15vw 25vh 1px 0 rgba(255, 255, 255, .6),
-        55vw 15vh 1px 0 rgba(255, 255, 255, .7);
-    }
+        /* star cloud with multiple box-shadow */
+        .stars:before {
+            background: transparent;
+            box-shadow:
+                20vw 10vh 1px 1px rgba(255, 255, 255, .8),
+                40vw 30vh 1px 0 rgba(255, 255, 255, .5),
+                60vw 70vh 2px 0 rgba(255, 255, 255, .6),
+                80vw 20vh 1px 0 rgba(255, 255, 255, .7),
+                10vw 60vh 2px 0 rgba(255, 255, 255, .45),
+                30vw 80vh 1px 0 rgba(255, 255, 255, .55),
+                70vw 50vh 2px 0 rgba(255, 255, 255, .6),
+                90vw 40vh 1px 0 rgba(255, 255, 255, .55),
+                15vw 25vh 1px 0 rgba(255, 255, 255, .6),
+                55vw 15vh 1px 0 rgba(255, 255, 255, .7);
+        }
 
-    .stars:after {
-      background: transparent;
-      box-shadow:
-        25vw 35vh 1px 0 rgba(255, 255, 255, .35),
-        65vw 25vh 1px 0 rgba(255, 255, 255, .35),
-        85vw 75vh 1px 0 rgba(255, 255, 255, .35),
-        5vw 85vh 1px 0 rgba(255, 255, 255, .35),
-        45vw 55vh 1px 0 rgba(255, 255, 255, .35),
-        75vw 5vh 1px 0 rgba(255, 255, 255, .35);
-      filter: blur(.2px);
-    }
+        .stars:after {
+            background: transparent;
+            box-shadow:
+                25vw 35vh 1px 0 rgba(255, 255, 255, .35),
+                65vw 25vh 1px 0 rgba(255, 255, 255, .35),
+                85vw 75vh 1px 0 rgba(255, 255, 255, .35),
+                5vw 85vh 1px 0 rgba(255, 255, 255, .35),
+                45vw 55vh 1px 0 rgba(255, 255, 255, .35),
+                75vw 5vh 1px 0 rgba(255, 255, 255, .35);
+            filter: blur(.2px);
+        }
 
-    /* Layout principal */
-    .wrap {
-      position: relative;
-      max-width: var(--maxw);
-      margin: 0 auto;
-      min-height: 100%;
-      padding: clamp(18px, 4vw, 40px);
-    }
+        /* Main layout */
+        .wrap {
+            position: relative;
+            max-width: var(--maxw);
+            margin: 0 auto;
+            min-height: 100%;
+            padding: clamp(18px, 4vw, 40px);
+        }
 
-    /* foto arriba-derecha */
-    .avatar {
-      position: fixed;
-      top: clamp(14px, 3vw, 24px);
-      right: clamp(14px, 3vw, 28px);
-      width: 110px;
-      height: 110px;
-      border-radius: 50%;
-      background: linear-gradient(180deg, rgba(255, 255, 255, .08), rgba(255, 255, 255, .02));
-      box-shadow: var(--shadow);
-      display: grid;
-      place-items: center;
-      overflow: hidden;
-      border: 1px solid rgba(255, 255, 255, .08);
-    }
+        /* top-right photo */
+        .avatar {
+            position: fixed;
+            top: clamp(14px, 3vw, 24px);
+            right: clamp(14px, 3vw, 28px);
+            width: 110px;
+            height: 110px;
+            border-radius: 50%;
+            background: linear-gradient(180deg, rgba(255, 255, 255, .08), rgba(255, 255, 255, .02));
+            box-shadow: var(--shadow);
+            display: grid;
+            place-items: center;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, .08);
+        }
 
-    .avatar img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block
-    }
+        .avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block
+        }
 
-    .grid {
-      display: grid;
-      gap: 32px;
-      align-items: start;
-      grid-template-columns: minmax(260px, 320px) 1fr;
-      padding-top: 120px;
-      /* para despegar del avatar */
-    }
+        .grid {
+            display: grid;
+            gap: 32px;
+            align-items: start;
+            grid-template-columns: minmax(260px, 320px) 1fr;
+            padding-top: 120px;
+            /* to detach from avatar */
+        }
 
-    /* Panel de secciones (plasma oscuro, forma "circular vertical") */
-    .panel {
-      position: relative;
-      background: var(--panel);
-      border-radius: calc(var(--radius) * 1.8);
-      border: 1px solid rgba(255, 255, 255, .08);
-      box-shadow: var(--shadow);
-      backdrop-filter: blur(14px) saturate(120%);
-      -webkit-backdrop-filter: blur(14px) saturate(120%);
-      padding: 10px;
-      overflow: hidden;
-    }
+        /* Section panel (dark plasma, "circular vertical" shape) */
+        .panel {
+            position: relative;
+            background: var(--panel);
+            border-radius: calc(var(--radius) * 1.8);
+            border: 1px solid rgba(255, 255, 255, .08);
+            box-shadow: var(--shadow);
+            backdrop-filter: blur(14px) saturate(120%);
+            -webkit-backdrop-filter: blur(14px) saturate(120%);
+            padding: 10px;
+            overflow: hidden;
+        }
 
-    /* contorno con líneas que curvan arriba/abajo */
-    .panel:before,
-    .panel:after {
-      content: "";
-      position: absolute;
-      left: 16px;
-      right: 16px;
-      height: 22px;
-      border-radius: 999px;
-      border: 1px solid rgba(255, 255, 255, .08);
-    }
+        /* contour with lines curving up/down */
+        .panel:before,
+        .panel:after {
+            content: "";
+            position: absolute;
+            left: 16px;
+            right: 16px;
+            height: 22px;
+            border-radius: 999px;
+            border: 1px solid rgba(255, 255, 255, .08);
+        }
 
-    .panel:before {
-      top: 12px;
-    }
+        .panel:before {
+            top: 12px;
+        }
 
-    .panel:after {
-      bottom: 12px;
-    }
+        .panel:after {
+            bottom: 12px;
+        }
 
-    .menu {
-      list-style: none;
-      margin: 32px 22px;
-      padding: 0;
-      display: flex;
-      flex-direction: column;
-      gap: 18px;
-    }
+        .menu {
+            list-style: none;
+            margin: 32px 22px;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 18px;
+        }
 
-    .menu button {
-      width: 100%;
-      text-align: left;
-      background: transparent;
-      color: var(--text);
-      font-size: 20px;
-      font-weight: 600;
-      border: 0;
-      padding: 16px 18px;
-      cursor: pointer;
-      border-radius: 999px;
-      position: relative;
-      transition: background var(--speed), transform var(--speed);
-    }
+        .menu button {
+            width: 100%;
+            text-align: left;
+            background: transparent;
+            color: var(--text);
+            font-size: 20px;
+            font-weight: 600;
+            border: 0;
+            padding: 16px 18px;
+            cursor: pointer;
+            border-radius: 999px;
+            position: relative;
+            transition: background var(--speed), transform var(--speed);
+        }
 
-    .menu button:hover {
-      transform: translateY(-1px)
-    }
+        .menu button:hover {
+            transform: translateY(-1px)
+        }
 
-    .menu button[aria-current="true"] {
-      background: linear-gradient(180deg, var(--panel-spot), rgba(255, 255, 255, .03));
-      box-shadow: inset 0 0 0 1px rgba(255, 255, 255, .08);
-    }
+        .menu button[aria-current="true"] {
+            background: linear-gradient(180deg, var(--panel-spot), rgba(255, 255, 255, .03));
+            box-shadow: inset 0 0 0 1px rgba(255, 255, 255, .08);
+        }
 
-    /* Área de contenido con aparición fluida */
-    .content {
-      min-height: 360px;
-      padding: 24px 6vw 36px 6vw;
-      border-left: 1px solid rgba(255, 255, 255, .06);
-      display: grid;
-      align-content: start;
-      gap: 14px;
-    }
+        /* Content area with smooth appearance */
+        .content {
+            min-height: 360px;
+            padding: 24px 6vw 36px 6vw;
+            border-left: 1px solid rgba(255, 255, 255, .06);
+            display: grid;
+            align-content: start;
+            gap: 14px;
+        }
 
-    .content h2 {
-      margin: 0;
-      font-size: 28px;
-      letter-spacing: .2px
-    }
+        .content h2 {
+            margin: 0;
+            font-size: 28px;
+            letter-spacing: .2px
+        }
 
-    .content p {
-      margin: 0;
-      color: var(--muted);
-      font-size: 18px
-    }
+        .content p {
+            margin: 0;
+            color: var(--muted);
+            font-size: 18px
+        }
 
-    .fade-enter {
-      opacity: 0;
-      transform: translateY(6px)
-    }
+        .fade-enter {
+            opacity: 0;
+            transform: translateY(6px)
+        }
 
-    .fade-enter-active {
-      opacity: 1;
-      transform: none;
-      transition: opacity var(--speed), transform var(--speed)
-    }
+        .fade-enter-active {
+            opacity: 1;
+            transform: none;
+            transition: opacity var(--speed), transform var(--speed)
+        }
 
-    .project-link,
-    .contact-link {
-      color: #3b82f6;
-      text-decoration: none;
-      font-weight: 500;
-      transition: color 0.2s;
-    }
+        .project-link,
+        .contact-link {
+            color: #3b82f6;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
 
-    .project-link:hover,
-    .contact-link:hover {
-      color: #2563eb;
-      text-decoration: underline;
-    }
+        .project-link:hover,
+        .contact-link:hover {
+            color: #2563eb;
+            text-decoration: underline;
+        }
 
-    /* Responsive */
-    @media (max-width:900px) {
-      .avatar {
-        width: 84px;
-        height: 84px
-      }
+        /* Responsive */
+        @media (max-width:900px) {
+            .avatar {
+                width: 84px;
+                height: 84px
+            }
 
-      .grid {
-        grid-template-columns: 1fr;
-        padding-top: 120px
-      }
+            .grid {
+                grid-template-columns: 1fr;
+                padding-top: 120px
+            }
 
-      .content {
-        border-left: 0;
-        border-top: 1px solid rgba(255, 255, 255, .06);
-        padding: 22px 24px 36px
-      }
+            .content {
+                border-left: 0;
+                border-top: 1px solid rgba(255, 255, 255, .06);
+                padding: 22px 24px 36px
+            }
 
-      .panel {
-        margin-top: 12px
-      }
-    }
-  </style>
+            .panel {
+                margin-top: 12px
+            }
+        }
+    </style>
 </head>
 
 <body>
-  <div class="stars" aria-hidden="true"></div> <!-- Foto superior derecha -->
-  <figure class="avatar" title="Tu foto">
-    <!-- Reemplaza el src por tu foto -->
-    <img src="img/yo.jpg" alt="Foto de perfil" />
-  </figure>
-  <main class="wrap">
-    <div class="grid">
-      <!-- Panel lateral de secciones -->
-      <nav class="panel" aria-label="Secciones">
-        <ul class="menu">
-          <li><button class="tab" data-target="about" aria-current="true">About Me</button></li>
-          <li><button class="tab" data-target="tech">Technologies</button></li>
-          <li><button class="tab" data-target="skills">Skills</button></li>
-          <li><button class="tab" data-target="own">Own Projects</button></li>
-          <li><button class="tab" data-target="clients">Projects</button></li>
-        </ul>
-      </nav><!-- Contenido dinámico -->
-      <section class="content" id="content" aria-live="polite" aria-atomic="true">
-        <h2>About Me</h2>
-        <p>Desarrollador apasionado con enfoque en rendimiento, accesibilidad y experiencias limpias. Me gusta crear
-          herramientas y productos que realmente usen las personas.</p>
-        <p>Trabajo con equipos pequeños y startups; escribo código claro, pruebas útiles y automatizaciones que ahorran
-          tiempo.</p>
-      </section>
-    </div>
+    <div class="stars" aria-hidden="true"></div> <!-- Top right photo -->
+    <figure class="avatar" title="Your photo">
+        <!-- Replace src with your photo -->
+        <img src="img/yo.jpg" alt="Profile photo" />
+    </figure>
+    <main class="wrap">
+        <div class="grid">
+            <!-- Sidebar section panel -->
+            <nav class="panel" aria-label="Sections">
+                <ul class="menu">
+                    <li><button class="tab" data-target="about" aria-current="true">About Me</button></li>
+                    <li><button class="tab" data-target="tech">Technologies</button></li>
+                    <li><button class="tab" data-target="skills">Skills</button></li>
+                    <li><button class="tab" data-target="own">Own Projects</button></li>
+                    <li><button class="tab" data-target="clients">Projects</button></li>
+                </ul>
+            </nav><!-- Dynamic content -->
+            <section class="content" id="content" aria-live="polite" aria-atomic="true">
+                <h2>About Me</h2>
+                <p>I'm a self-taught full stack developer building modern web applications with Django, Python,
+                    JavaScript, MySQL, and more. I create practical tools and solutions for real-world problems, from
+                    backend APIs to beautiful, responsive frontends.</p>
+                <p>I am committed to reliability, teamwork, and continuous improvement. I focus on clean code, security,
+                    performance, and collaborating with cross-functional teams to deliver results that matter.</p>
+            </section>
+        </div>
 
-  </main>
-  <script>
-    const VIEWS = {
-      about: {
-        title: 'About Me',
-        body: [
-          "I'm a self-taught full stack developer from Nicaragua, specializing in backend and full stack web development with Django, Python, JavaScript, MySQL, and more.",
-          "I build production-ready apps with beautiful, responsive frontends and robust, scalable backends. I thrive on solving real-world problems, learning new technologies fast, and delivering business value.",
-          "Committed to reliability, teamwork, and continuous improvement. I focus on clean code, security, performance, and collaborating with cross-functional teams to deliver results that matter."
-        ]
-      },
-      tech: {
-        title: 'Technologies',
-        body: [
-          "Python, Django, JavaScript (ES6+), TypeScript, React, HTML5 & CSS3, SASS, Tailwind CSS, MySQL, PostgreSQL, Linux, REST APIs, API Design, Docker, Git & GitHub, Unit Testing, Continuous Integration, Cloud Deployment (Render, Heroku), Performance Optimization, Figma, Agile & Remote Collaboration."
-        ]
-      },
-      skills: {
-        title: 'Skills',
-        body: [
-          "Full Stack Development, Backend APIs, Frontend UI/UX, Responsive Design, Problem Solving, Clean Code, Security, Performance, Teamwork, Fast Learning, Business Value Delivery."
-        ]
-      },
-      own: {
-        title: 'Own Projects',
-        body: [
-          "• Task Manager: Modern Django web app for managing tasks with AJAX, dark mode, responsive design, and robust backend. Features: add, complete, and delete tasks instantly. Built with Django, JavaScript, HTML5, CSS3, and deployed on Render.",
-          "  - Live Demo: <a href='https://task-manager-eyjb.onrender.com/' target='_blank' class='project-link'>task-manager-eyjb.onrender.com</a>",
-          "  - GitHub: <a href='https://github.com/Jenser-Najar/Task_Manager' target='_blank' class='project-link'>Jenser-Najar/Task_Manager</a>",
-          "• Maíz Yield Calculator: Full stack CLI and Django web tool to calculate corn production profitability using real farm data. Includes user authentication, data visualization, and export features. Built with Django, Python, MySQL, JavaScript, and deployed on Render.",
-          "  - Live Demo: <a href='https://maiz-yield-calculator.onrender.com/' target='_blank' class='project-link'>maiz-yield-calculator.onrender.com</a>",
-          "  - GitHub: <a href='https://github.com/Jenser-Najar/Maiz_Yield_Calculator' target='_blank' class='project-link'>Jenser-Najar/Maiz_Yield_Calculator</a>"
-        ]
-      },
-      clients: {
-        title: 'Projects',
-        body: [
-          "• Freelance and client projects: e-commerce, portfolios, SaaS, technical design, development, deployment, and support.",
-          "Contact: jensernajar228@gmail.com | GitHub: <a href='https://github.com/Jenser-Najar' target='_blank' class='contact-link'>Jenser-Najar</a> | LinkedIn: <a href='https://www.linkedin.com/in/jenser-najar-a59753206/' target='_blank' class='contact-link'>Jenser Najar</a> | Upwork: <a href='https://www.upwork.com/freelancers/~01475d0b8716ebb0ce?qpn-profile-completeness=portfolio' target='_blank' class='contact-link'>Upwork Profile</a> | <a href='Jenser_Najar_CV.pdf' download class='contact-link'>Download CV</a>"
-        ]
-      }
-    };
+    </main>
+    <script>
+        const VIEWS = {
+            about: {
+                title: 'About Me',
+                body: [
+                    "I'm a self-taught full stack developer from Nicaragua, specializing in backend and full stack web development with Django, Python, JavaScript, MySQL, and more.",
+                    "I build production-ready apps with beautiful, responsive frontends and robust, scalable backends. I thrive on solving real-world problems, learning new technologies fast, and delivering business value.",
+                    "Committed to reliability, teamwork, and continuous improvement. I focus on clean code, security, performance, and collaborating with cross-functional teams to deliver results that matter."
+                ]
+            },
+            tech: {
+                title: 'Technologies',
+                body: [
+                    "Python, Django, JavaScript (ES6+), TypeScript, React, HTML5 & CSS3, SASS, Tailwind CSS, MySQL, PostgreSQL, Linux, REST APIs, API Design, Docker, Git & GitHub, Unit Testing, Continuous Integration, Cloud Deployment (Render, Heroku), Performance Optimization, Figma, Agile & Remote Collaboration."
+                ]
+            },
+            skills: {
+                title: 'Skills',
+                body: [
+                    "Full Stack Development, Backend APIs, Frontend UI/UX, Responsive Design, Problem Solving, Clean Code, Security, Performance, Teamwork, Fast Learning, Business Value Delivery."
+                ]
+            },
+            own: {
+                title: 'Own Projects',
+                body: [
+                    "• Task Manager: Modern Django web app for managing tasks with AJAX, dark mode, responsive design, and robust backend. Features: add, complete, and delete tasks instantly. Built with Django, JavaScript, HTML5, CSS3, and deployed on Render.",
+                    "  - Live Demo: <a href='https://task-manager-eyjb.onrender.com/' target='_blank' class='project-link'>task-manager-eyjb.onrender.com</a>",
+                    "  - GitHub: <a href='https://github.com/Jenser-Najar/Task_Manager' target='_blank' class='project-link'>Jenser-Najar/Task_Manager</a>",
+                    "• Maíz Yield Calculator: Full stack CLI and Django web tool to calculate corn production profitability using real farm data. Includes user authentication, data visualization, and export features. Built with Django, Python, MySQL, JavaScript, and deployed on Render.",
+                    "  - Live Demo: <a href='https://maiz-yield-calculator.onrender.com/' target='_blank' class='project-link'>maiz-yield-calculator.onrender.com</a>",
+                    "  - GitHub: <a href='https://github.com/Jenser-Najar/Maiz_Yield_Calculator' target='_blank' class='project-link'>Jenser-Najar/Maiz_Yield_Calculator</a>"
+                ]
+            },
+            clients: {
+                title: 'Projects',
+                body: [
+                    "• Freelance and client projects: e-commerce, portfolios, SaaS, technical design, development, deployment, and support.",
+                    "Contact: jensernajar228@gmail.com | GitHub: <a href='https://github.com/Jenser-Najar' target='_blank' class='contact-link'>Jenser-Najar</a> | LinkedIn: <a href='https://www.linkedin.com/in/jenser-najar-a59753206/' target='_blank' class='contact-link'>Jenser Najar</a> | Upwork: <a href='https://www.upwork.com/freelancers/~01475d0b8716ebb0ce?qpn-profile-completeness=portfolio' target='_blank' class='contact-link'>Upwork Profile</a> | <a href='Jenser_Najar_CV.pdf' download class='contact-link'>Download CV</a>"
+                ]
+            }
+        };
 
-    const menu = document.querySelectorAll('.tab');
-    const content = document.getElementById('content');
+        const menu = document.querySelectorAll('.tab');
+        const content = document.getElementById('content');
 
-    function render(key) {
-      const view = VIEWS[key];
-      if (!view) return;
+        function render(key) {
+            const view = VIEWS[key];
+            if (!view) return;
 
-      // Estado activo en el menú
-      menu.forEach(btn => btn.setAttribute('aria-current', btn.dataset.target === key ? 'true' : 'false'));
+            // Active state in menu
+            menu.forEach(btn => btn.setAttribute('aria-current', btn.dataset.target === key ? 'true' : 'false'));
 
-      // Transición de aparición
-      content.classList.remove('fade-enter', 'fade-enter-active');
-      void content.offsetWidth; // reflow
-      content.classList.add('fade-enter');
+            // Appearance transition
+            content.classList.remove('fade-enter', 'fade-enter-active');
+            void content.offsetWidth; // reflow
+            content.classList.add('fade-enter');
 
-      // Relleno del contenido
-      content.innerHTML = `<h2>${view.title}</h2>` + view.body.map(p => `<p>${p}</p>`).join('');
+            // Content filling
+            content.innerHTML = `<h2>${view.title}</h2>` + view.body.map(p => `<p>${p}</p>`).join('');
 
-      requestAnimationFrame(() => content.classList.add('fade-enter-active'));
-    }
+            requestAnimationFrame(() => content.classList.add('fade-enter-active'));
+        }
 
-    menu.forEach(btn => {
-      btn.addEventListener('click', () => render(btn.dataset.target), { passive: true });
-      btn.addEventListener('touchend', () => render(btn.dataset.target), { passive: true });
-    });
-  </script>
+        menu.forEach(btn => {
+            btn.addEventListener('click', () => render(btn.dataset.target), { passive: true });
+            btn.addEventListener('touchend', () => render(btn.dataset.target), { passive: true });
+        });
+    </script>
 </body>
 
 </html>
